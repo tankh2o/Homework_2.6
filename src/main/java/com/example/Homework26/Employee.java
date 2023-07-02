@@ -1,20 +1,16 @@
 package com.example.Homework26;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.Objects;
 
 public class Employee {
     private String firstName;
     private String lastName;
 
-    public static Employee createEmployee(String firstName, String lastName) {
-        Employee employee = new Employee(firstName, lastName);
-        employee.firstName = firstName;
-        employee.lastName = lastName;
-        return employee;
-    }
     public Employee(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstName = StringUtils.capitalize(firstName.toLowerCase());
+        this.lastName = StringUtils.capitalize(lastName.toLowerCase());
     }
 
     public String getFirstName() {
@@ -23,6 +19,14 @@ public class Employee {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     @Override

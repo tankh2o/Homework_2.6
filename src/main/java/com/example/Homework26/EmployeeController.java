@@ -21,7 +21,7 @@ public class EmployeeController {
         return employeeServiceInterface.findOutNumberEmployees();
     }
     @GetMapping(path = "/add")
-    public String addEmployee(
+    public Employee addEmployee(
             @RequestParam(value = "firstName", required = false) String firstName,
             @RequestParam(value = "lastName", required = false) String lastName) {
         return employeeServiceInterface.addEmployee(firstName, lastName);
